@@ -1,0 +1,213 @@
+/* select by tag name, class name, id */
+/* h1 {
+    color: purple;
+}
+
+
+#hello {
+    font-size: 50px;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+} */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+footer {
+  height: 200px;
+}
+
+/* multiple selectors together without space */
+.blue.big.strike {
+  color: blue;
+  font-size: 50px;
+  text-decoration: line-through;
+}
+
+/* put multiple selectors with space */
+/* descendant selector */
+.container .title.unique {
+  color: blue;
+}
+
+.container button {
+  background-color: green;
+}
+
+.container1 .title {
+  background-color: red;
+}
+
+input[type="text"] {
+  background-color: brown;
+}
+
+input[type="submit"] {
+  background-color: yellow;
+}
+
+.clickable {
+  height: 100px;
+  width: 200px;
+}
+
+/* : is for pseudo class 
+    :: is for pseudo element 
+*/
+
+.clickable:hover {
+  background-color: red;
+  cursor: not-allowed;
+}
+
+.text:focus {
+  background-color: green;
+}
+
+li:nth-child(2n + 1) {
+  background-color: aqua;
+}
+
+.list li {
+  margin: 10px;
+}
+
+.list li::after {
+  /* background-color: blue; */
+  content: ":)";
+}
+
+.bugatti.expensive {
+  background-color: red;
+}
+
+.bugatti {
+  background-color: blue;
+}
+
+#idddd {
+  background-color: khaki;
+  height: 100px;
+  margin-bottom: 5rem;
+}
+
+.red-block {
+  background-color: red;
+  overflow-wrap: break-word;
+  height: 200px;
+  width: 200px;
+  padding: 30px 10px;
+  border: 20px solid black;
+}
+
+.block {
+  display: inline;
+}
+
+.block {
+  height: 30px;
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-evenly;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.grid {
+  margin-top: 20px;
+  display: grid;
+  width: fit-content;
+  border: 1px solid black;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+/* 1rem = root font size = 16px */
+.word {
+    font-size: 3rem;
+}
+
+
+@media screen and (max-width: 300px) {
+  * {
+    background-color: red;
+  }
+}
+
+
+
+
+.card {
+    width: 200px;
+    border: 1px solid black;
+}
+
+.card__img {
+    width: 100%;
+    object-fit: contain;
+    /* border: 1px solid black; */
+}
+
+.card__body {
+    /* border: 1px solid black; */
+    padding: 0 10px;
+}
+
+
+.card__title {
+    /* border: 1px solid black; */
+    margin: 10px 0;
+}
+
+.card__paragraph {
+    font-size: 1rem;
+}
+
+.card__button {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+}
+
+.card__button--green {
+    background-color: green;
+    color: red;
+}
+
+.card__button--yellow {
+    background-color: yellow;
+    color: blue;
+}

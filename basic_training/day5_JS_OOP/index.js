@@ -162,4 +162,119 @@
 // console.log(counterApp.getCount());
 
 
+// function person(name="Brokie",money=0){
+//     return {
+//         name,
+//         money
+//     }
+// }
 
+
+// const p1 = person();
+
+
+
+//conditional operator
+// const bool = true;
+
+//unecessary
+// let value;
+// if(bool){
+//     value = "correct"
+// } else {
+//     value = "false"
+// }
+
+// const value = bool ? "correct" : "this is false";
+// console.log(value);
+
+
+
+//short circuit evaluation
+// if(1===0 && true && 2>1){
+
+// }
+
+// if(true||false){
+    
+// }
+
+
+// const a = true && "aaaaaa";
+// const b = false && "bbbbbbb";
+// const c = 0 && "cccccc";
+// // console.log(a); 
+// // console.log(b);
+// // console.log(c);
+
+// const d = true || "very wrong";
+// const e = undefined || "something";
+// const f = undefined || false;
+// // console.log(d)
+// // console.log(e)
+// console.log(f)
+
+
+
+// class Person {
+//     constructor(name,id){
+//         this.name = name;
+//         this.id = id;
+//     }
+
+//     toString(){
+//         return `{name: ${this.name}, id: ${this.id}}`
+//     }
+// }
+
+// // Object.prototype.toString = function(){
+// //     return "this is the new string"
+// // }
+
+// const p1 = new Person("Brandon","123")
+// console.log(p1);
+
+// console.log(`obj1 = ${p1}`)
+
+
+
+// function evaluateNum(num){
+//     // if(num>0){
+//     //     return "positive";
+//     // } else if(num<0){
+//     //     return "negative"
+//     // } else {
+//     //     return "zero"
+//     // }
+
+//     if(num>0) return "positive";
+//     if(num<0) return "negative";
+//     return "zero";
+// }
+
+// // console.log(evaluateNum(9));
+// // evaluateNum();
+
+// function foo(peopleArr){
+//     if(peopleArr.length = 0) return "zero"
+//     peopleArr.forEach(e=>e)
+// }
+
+
+
+
+//bind
+const person = {
+    name: "Steve",
+    sayHi(){
+        console.log("hi",this.name)
+    },
+    getName(){
+        return this.name;
+    }
+}
+
+
+const fn = person.sayHi.bind(person);
+
+fn()

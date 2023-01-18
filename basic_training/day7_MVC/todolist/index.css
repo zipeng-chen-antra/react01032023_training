@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.todo-list-app {
+    border: 1px solid black;
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    padding: 3rem;
+}
+
+
+.todo-list-app__form {
+
+    /* border: 1px solid black; */
+    margin-bottom: 2rem;
+}
+
+.todo-list {
+    /* border: 1px solid black; */
+}
+
+.todo {
+    
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.todo__task {
+    text-align: left;
+    padding: 1rem 5rem;
+    width: 80%;
+}

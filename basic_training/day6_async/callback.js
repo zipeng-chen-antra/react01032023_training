@@ -102,24 +102,17 @@ function makeBurger(bun, patty) {
   });
 }
 
-// const Ingredients = {
 
-// }
-// getBun().then(bun=>{
-//     console.log(bun);
-//     Ingredients.bun = bun;
-//     return getBeef()
-// }).then(beef=>{
-//     console.log(beef);
-//     return cookBeef(beef);
-// }).then(patty=>{
-//     console.log(patty);
-//     return makeBurger(Ingredients.bun,patty)
-// }).then(burger=>{
-//     console.log(burger, "is ready to serve")
-// }).catch(err=>{
-//     console.log(err);
-// })
+
+async function getBurger(){
+  const bun = await getBun();
+  const beef = await getBeef();
+  const patty = await cookBeef(beef);
+  const burger = await makeBurger(bun,patty);
+  return burger
+}
+
+
 
 // getBeef().then(beef=>{
 //     console.log(beef)

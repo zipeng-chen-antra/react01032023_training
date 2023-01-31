@@ -156,7 +156,6 @@ class TodoController {
     this.view.todoForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const inputValue = this.view.todoInput.value;
-      console.log(inputValue);
       this.model
         .addTodo({
           task: inputValue,

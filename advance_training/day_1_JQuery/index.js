@@ -5,6 +5,8 @@ $("button.continue")
   })
   .addClass("bg");
 
+
+
 class MyQuery {
   constructor(query) {
     this.elements = document.querySelectorAll(query);
@@ -35,10 +37,42 @@ const $$ = (query) => {
   return myQuery;
 };
 
+// $.ajax({
+//   url: "https://jsonplaceholder.typicode.com/comments",
+//   data: {
+//     postId: 1
+//   },
+//   success: function( result ) {
+//     console.log(result)
+//   }
+// })
 
-$$.ajax = (request) => {
-    
+
+$$.ajax = (req) => {
+    let url = req.url;
+    if(req.data){
+      url += "?";
+      for(const [key,value] of Object.entries(req.data)){
+        url += key + "=" + value + "&"
+      }
+      url = url.slice(0,-1);
+    }
+    fetch(url).then(res=>res.json()).then(req.success).catch(req.failure);
 }
+
+$$.ajax({
+  url: "https://jsonplaceholder.typicode.com/comments",
+  data: {
+    postId: 1
+  },
+  success: function( result ) {
+    console.log(result)
+  },
+  failure: function (err){
+    console.log(err)
+  }
+})
+
 
 $$("button.ourBtn").html("Our Btn").addClass("sm");
 const a1 = $$(".ourBtn1").on("click", (e) => console.log("btn 1"));

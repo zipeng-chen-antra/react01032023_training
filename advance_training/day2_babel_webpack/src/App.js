@@ -8,6 +8,8 @@ export default function App() {
       <div>hello world</div>
       <button>button</button>
       <Person name="Mike"/>
+      <Person name="Mike"/>
+      <Person name="Jack"/>
     </div>
   );
 }

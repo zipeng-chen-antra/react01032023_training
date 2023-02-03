@@ -3,27 +3,40 @@
 import React from "./react/react";
 import ReactDOM from "./react/react-dom";
 
-
-
 const element = (
-  <div a="a" b="b">
-    <div className="title-container">
-      <h1>title</h1>
-      <p>lorem ipsum</p>
+  <div className="todo">
+    <div>
+      <div>
+        <h1 style={ {color:"red", backgroundColor: "blue"} }>111</h1>
+      </div>
+      <div>
+        <input placeholder="placeholder"/>
+      </div>
+      <button onClick={()=>{console.log("clicked")}}>button</button>
     </div>
-    <div>1+1+1+1</div>
   </div>
 );
-console.log(element);
 
-// {
-//   key: null,
-//   props: {
-//     children: array or element
-//   },
-//   ref: null
-// }
+class AppC extends React.Component{
 
+
+  render(){
+    return <div>
+      Class App
+    </div>
+  }
+}
+
+function AppF(){
+  return <div>
+    function app
+  </div>
+}
+
+// console.log(<App/>);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(element);
+root.render(<div>
+  <AppC/>
+  <AppF/>
+</div>);

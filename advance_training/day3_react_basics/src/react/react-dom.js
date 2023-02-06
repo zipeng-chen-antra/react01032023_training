@@ -36,7 +36,7 @@ const ReactDOM = {
             } else if (children instanceof ReactElement) {
                 renderElement(children, domElem);
             } else if (children instanceof Array) {
-                console.log(children);
+                // console.log(children);
                 children.forEach((child) => {
                     renderElement(child, domElem);
                 });
@@ -44,12 +44,16 @@ const ReactDOM = {
             parentElem.append(domElem);
         } else if(typeof type === "function" && !!type.prototype.render){
             const ClassComponent = type;
-            const instance = new ClassComponent();
+            const instance = new ClassComponent(props);
+            instance.parentDom = parentElem;
             const instanceReactElem = instance.render();
             renderElement(instanceReactElem,parentElem);
         } else if(typeof type === "function"){
+
             const FunctionComponent = type;
-            const instanceReactElem = FunctionComponent();
+            const instanceReactElem = FunctionComponent(props);
+            // const instanceReactElem = <div>function</div>;
+
             renderElement(instanceReactElem,parentElem);
         }
       }

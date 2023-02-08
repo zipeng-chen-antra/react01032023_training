@@ -3,17 +3,17 @@ import React, { useEffect, useState } from "react";
 export default function PersonF({ name, money, cb }) {
   const [age, setAge] = useState(0);
 
-    useEffect(() => {
-      console.log("code")
-      const intervalID = setInterval(()=>{
-        console.log("tic toc");
-      },1000)
+    // useEffect(() => {
+    //   console.log("code")
+    // //   const intervalID = setInterval(()=>{
+    // //     console.log("tic toc");
+    // //   },1000)
     
-      return () => {
-        console.log("cleanup")
-        clearInterval(intervalID);
-      }
-    }, [age])
+    //   return () => {
+    //     console.log("cleanup")
+    //     // clearInterval(intervalID);
+    //   }
+    // }, [age])
     
 
 

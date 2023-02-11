@@ -32,13 +32,14 @@ export default function Fetch() {
       <div>
         {posts.map((post) => {
           return (
-            <div key={post.id}>
+            <React.Fragment key={post.id}>
               <div>{post.userId}</div>
               <div>{post.title}</div>
-            </div>
+            </React.Fragment>
           );
         })}
       </div>
     </div>
   );
 }
+

@@ -10,6 +10,7 @@ export default function withCounter(
   return class NewComponent extends React.Component {
     constructor(props) {
       super(props);
+      console.log("props", { ...this.props });
       this.state = {
         count: initCount,
         amount: 0,
@@ -46,17 +47,16 @@ export default function withCounter(
     render() {
       const { count, amount } = this.state;
       return (
-        <div>
-          <Component
-            count={count}
-            reset={this.reset}
-            add={this.add}
-            minus={this.minus}
-            amount={amount}
-            handleAmountChange={this.handleAmountChange}
-            addByAmount={this.addByAmount}
-          />
-        </div>
+        <Component
+          count={count}
+          reset={this.reset}
+          add={this.add}
+          minus={this.minus}
+          amount={amount}
+          handleAmountChange={this.handleAmountChange}
+          addByAmount={this.addByAmount}
+          {...this.props}
+        />
       );
     }
   };

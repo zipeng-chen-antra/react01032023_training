@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { withLoading } from "../../HOC/withLoading";
 import wait from "../../util/wait";
 
-export default function Posts() {
+function Posts({
+  isLoading,
+  stopLoading,
+  Loader
+}) {
   const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((postData) => {
         wait(1500).then(() => {
           setPosts(postData);
-          setIsLoading(false);
+          stopLoading();
         });
       })
       .catch(console.log);
@@ -20,7 +24,7 @@ export default function Posts() {
     <div>
       <h1>Posts</h1>
       {isLoading ? (
-        <div>loading...</div>
+        <Loader />
       ) : (
         <div>
           {posts.map((post) => {
@@ -37,3 +41,5 @@ export default function Posts() {
     </div>
   );
 }
+
+export default withLoading(Posts,"spinner")

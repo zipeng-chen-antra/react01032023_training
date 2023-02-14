@@ -1,16 +1,12 @@
 import { useState } from "react";
-import Counter from "./components/day9_HOC/Counter";
-import Form from "./components/day9_HOC/Form";
-import Posts from "./components/day9_HOC/Posts";
-import Stock from "./components/day9_HOC/Stock";
+import PostCH from "./components/day10_custom_hooks/PostCH";
+import PostsCH from "./components/day10_custom_hooks/PostsCH";
 
 function App() {
   return (
     <div className="App">
-      {/* <Counter />
-      <Stock /> */}
-      {/* <Posts /> */}
-      <Form />
+      <PostsCH />
+
     </div>
   );
 }

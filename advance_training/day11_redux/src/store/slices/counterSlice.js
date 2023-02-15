@@ -4,13 +4,13 @@ export function counterReducer(state = initState, action) {
   // console.log(typeof action.payload);
 
   switch (action.type) {
-    case "add":
+    case "counter/increment":
       return state + 1;
-    case "minus":
+    case "conuter/decrement":
       return state - 1;
-    case "reset":
+    case "counter/reset":
       return initState;
-    case "addByAmount":
+    case "counter/addByAmount":
       return state + action.payload;
     default:
       return state;
@@ -18,16 +18,24 @@ export function counterReducer(state = initState, action) {
 }
 
 export function increment() {
-  return { type: "add" };
+  return { type: "counter/increment" };
 }
 
 export function decrement() {
-  return { type: "minus" };
+  return { type: "conuter/decrement" };
 }
 export function reset() {
-  return { type: "reset" };
+  return { type: "counter/reset" };
 }
 
 export function incrementByAmount(amount) {
-  return { type: "addByAmount", payload: amount };
+  return { type: "counter/addByAmount", payload: amount };
+}
+
+export function incrementAsync(amount,time=1000){
+  return async (dispatch)=>{
+    setTimeout(()=>{
+      dispatch(incrementByAmount(amount))
+    },time)
+  }
 }

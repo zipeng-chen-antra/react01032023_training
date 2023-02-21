@@ -1,0 +1,20 @@
+@use "../../styles/mixins";
+
+.card {
+    &__title {
+        font: calc(50px);
+        background-color: red;
+
+        &--light {
+            color: white
+        }
+
+        &--dark {
+            color: darkblue
+        }
+    }
+
+    &__button {
+        @include mixins.button(blue)
+    }
+}

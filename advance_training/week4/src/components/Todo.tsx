@@ -7,10 +7,10 @@ type TodoProps = {
 
 
 export default function Todo({ todo }: TodoProps) {
-    const { title, id } = todo;
+    const { title } = todo;
     return (
         <div>
-            <h3>{id} {title}</h3>
+            <h3>{title}</h3>
         </div>
     )
 }

@@ -83,3 +83,33 @@ function makeArr<T>(...rest:T[]):T[]{
 
 console.log(makeArr<Person>())
 
+
+
+interface Animal {
+  name: string;
+  breathe:()=>void;
+}
+
+interface Carnivore extends Animal {
+  eatMeat: ()=>void;
+}
+
+// interface Herbivore extends Animal {
+//   eatGrass: ()=>void;
+// }
+
+// function takeAnimal(a:Animal){
+
+// }
+
+// const wolf:Carnivore = {
+//   name: "human",
+//   breathe: ()=>{},
+//   eatMeat: ()=>{}
+// }
+// const human:Animal = {
+//   name: "human",
+//   breathe: ()=>{}
+// }
+
+// takeAnimal(wolf)

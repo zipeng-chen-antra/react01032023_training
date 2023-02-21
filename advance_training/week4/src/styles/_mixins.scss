@@ -1,0 +1,11 @@
+
+%button-border {
+    border: none;
+    border-radius: 5px;
+}
+
+@mixin button($background-color,$font-color:white){
+    background-color: $background-color;
+    color: $font-color;
+    @extend %button-border
+}

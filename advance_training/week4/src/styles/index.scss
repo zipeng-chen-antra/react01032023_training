@@ -1,0 +1,15 @@
+
+@import "./variables.scss";
+@import "./mixins";
+
+
+
+.button--primary {
+    @include button(blue)
+}
+.button--secondary {
+    @include button(grey)
+}
+.button--success {
+    @include button(green)
+}

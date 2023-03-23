@@ -23,8 +23,6 @@ describe("Like button", () => {
         expect(likeBtn).toBeInTheDocument();
     })
 
-
-
     test("should be liked after clicking once", () => {
         render(<Like />)
         const likeBtn = screen.getByRole("like-button");
